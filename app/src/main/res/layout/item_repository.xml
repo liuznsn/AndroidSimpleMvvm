@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="itemMainViewModel"
+        type="com.example.leoliu.androidsimplemvvm.viewmodel.ItemMainViewModel" />
+</data>
+<RelativeLayout
+    android:id="@+id/item_repository"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_large"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_people"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:imageUrl="@{itemMainViewModel.avatarUrl}"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_people"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_toRightOf="@id/image_people"
+        android:text="@{itemMainViewModel.title}"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+</RelativeLayout>
+</layout>
